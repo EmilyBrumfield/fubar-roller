@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="index.css" rel="stylesheet">
+    
+    <title>Template</title>
+
+  </head>
+
+  <body>
+    <main>
+
+    <div id="app">
+        <button onClick="displayResult(3)">Roll</button>    
+        <ul id="results">
+          <li v-for="roll in rolls">
+            {{ roll }}
+          </li>
+        </ul>
+    </div>
+    
+
+    </main>
+    <script src="vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
