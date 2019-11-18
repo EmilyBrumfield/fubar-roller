@@ -3,12 +3,13 @@
 //accessibility
 //PWA
 
-const MAX_HISTORY = 5;
+const MAX_HISTORY = 10;
 const BASE_DICE = 5;
 
 let data = {
-    rolls: [0,0,0,0,0],
-    butts: [0, 1, 2, 3, 4, 5]
+    rolls: [0,0,0,0,0,0,0,0,0,0],
+    count: 0,
+    lastModifier: "+0"
 }
 
 let vm = new Vue({
@@ -59,6 +60,13 @@ let rollCheck = function(modifier){
 
 let displayResult = function(modifier){
     let result = rollCheck(modifier);
+    data.count += 1;
+    if (modifier > -1){
+        data.lastModifier = "+" + modifier;
+    }
+    else {
+        data.lastModifier = modifier;
+    }
 
     data.rolls.unshift(result);
     if (data.rolls.length > MAX_HISTORY){

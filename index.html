@@ -13,13 +13,22 @@
 
   <body>
     <main>
-
-    <div id="app">   
-        <div id="results">
-          <div v-for="roll in rolls" class="result">
-            {{ roll }}
+      <div id="app">   
+        <div class="current">
+          <div class="current-element">
+            Result<br/>
+            <span class="big-font">{{rolls[0]}}</span>
           </div>
-        </div>
+          <div class="current-element">
+              Modifier<br/>
+              <span class="big-font">{{lastModifier}}</span>
+          </div>  
+          <div class="current-element">
+              Roll Number<br/>
+              <span class="big-font">{{count}}</span>
+          </div>
+        </div>  
+        <h1>Bonus Dice</h1>
         <div class="button-row">
           <button class="roll-button" onClick="displayResult(0)">+0</button>
           <button class="roll-button" onClick="displayResult(1)">+1</button>
@@ -32,6 +41,7 @@
           <button class="roll-button" onClick="displayResult(8)">+8</button>
           <button class="roll-button" onClick="displayResult(9)">+9</button>
         </div>
+        <h1>Penalty Dice</h1>
         <div class="button-row">
             <button class="roll-button" onClick="displayResult(-0)">-0</button>
             <button class="roll-button" onClick="displayResult(-1)">-1</button>
@@ -44,9 +54,13 @@
             <button class="roll-button" onClick="displayResult(-8)">-8</button>
             <button class="roll-button" onClick="displayResult(-9)">-9</button>
         </div>
-    </div>
-    
-
+        <h1>Roll History (left is most recent)</h1>  
+        <div id="results">
+          <div v-for="roll in rolls" class="result">
+            {{ roll }}
+          </div>
+        </div>
+      </div>
     </main>
     <script src="vue.js"></script>
     <script src="index.js"></script>
