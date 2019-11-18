@@ -14,13 +14,36 @@
   <body>
     <main>
 
-    <div id="app">
-        <button onClick="displayResult(3)">Roll</button>    
-        <ul id="results">
-          <li v-for="roll in rolls">
+    <div id="app">   
+        <div id="results">
+          <div v-for="roll in rolls" class="result">
             {{ roll }}
-          </li>
-        </ul>
+          </div>
+        </div>
+        <div class="button-row">
+          <button class="roll-button" onClick="displayResult(0)">+0</button>
+          <button class="roll-button" onClick="displayResult(1)">+1</button>
+          <button class="roll-button" onClick="displayResult(2)">+2</button>
+          <button class="roll-button" onClick="displayResult(3)">+3</button>
+          <button class="roll-button" onClick="displayResult(4)">+4</button>
+          <button class="roll-button" onClick="displayResult(5)">+5</button>
+          <button class="roll-button" onClick="displayResult(6)">+6</button>
+          <button class="roll-button" onClick="displayResult(7)">+7</button>
+          <button class="roll-button" onClick="displayResult(8)">+8</button>
+          <button class="roll-button" onClick="displayResult(9)">+9</button>
+        </div>
+        <div class="button-row">
+            <button class="roll-button" onClick="displayResult(-0)">-0</button>
+            <button class="roll-button" onClick="displayResult(-1)">-1</button>
+            <button class="roll-button" onClick="displayResult(-2)">-2</button>
+            <button class="roll-button" onClick="displayResult(-3)">-3</button>
+            <button class="roll-button" onClick="displayResult(-4)">-4</button>
+            <button class="roll-button" onClick="displayResult(-5)">-5</button>
+            <button class="roll-button" onClick="displayResult(-6)">-6</button>
+            <button class="roll-button" onClick="displayResult(-7)">-7</button>
+            <button class="roll-button" onClick="displayResult(-8)">-8</button>
+            <button class="roll-button" onClick="displayResult(-9)">-9</button>
+        </div>
     </div>
     
 

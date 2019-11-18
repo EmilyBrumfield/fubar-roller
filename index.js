@@ -1,8 +1,14 @@
+//display two rows, one positive, one negative, both with zero
+//media query version has different lengths of rows with buttons, possibly?
+//accessibility
+//PWA
+
 const MAX_HISTORY = 5;
 const BASE_DICE = 5;
 
 let data = {
-    rolls: []
+    rolls: [0,0,0,0,0],
+    butts: [0, 1, 2, 3, 4, 5]
 }
 
 let vm = new Vue({
@@ -21,7 +27,7 @@ let changeIndex = function(){
 
 let rollDie = function(){
     let roll = Math.floor(Math.random() * 2);
-    console.log("Roll: " + roll);
+    //console.log("Roll: " + roll);
     return roll;
 }
 
@@ -32,8 +38,8 @@ let rollDice = function(numDice){
         totalRoll += rollDie()
     }
 
-    console.log("NumDice: " + numDice);
-    console.log("Total Roll: " + totalRoll);
+    //console.log("NumDice: " + numDice);
+    //console.log("Total Roll: " + totalRoll);
     return totalRoll;
 }
 
@@ -43,15 +49,9 @@ let rollCheck = function(modifier){
     if (modifier < 0){
         result = rollDice(BASE_DICE + Math.abs(modifier))
         result += modifier;
-        if (result < 0) {
-            result = 0
-        }
     }
     else {
         result = rollDice(BASE_DICE + modifier)
-        if (result > BASE_DICE) {
-            result = BASE_DICE
-        }
     }
 
     return result;
